@@ -16,21 +16,25 @@ import (
     "github.com/jacquayj/safemap"
 )
 
-test := safemap.NewMap(map[string]int{
-    "test":    1234,
-    "another": 456,
-})
+func main() {
 
-num, ok := test.Get("test")
-fmt.Print(num, ok)
+    test := safemap.NewMap(map[string]int{
+        "test":    1234,
+        "another": 456,
+    })
 
-test.Set("another-key", 789)
+    num, ok := test.Get("test")
+    fmt.Print(num, ok)
 
-num2, ok := test.Get("another-key")
-fmt.Print(num2, ok)
+    test.Set("another-key", 789)
+
+    num2, ok := test.Get("another-key")
+    fmt.Print(num2, ok)
 
 
-ok = test.Delete("test")
-fmt.Print(ok)
+    ok = test.Delete("test")
+    fmt.Print(ok)
+
+}
 
 ```
